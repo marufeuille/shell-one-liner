@@ -1,0 +1,1 @@
+find ./tmp | sed '/[0-9]$/!d' | sed -e 's/.*\/\([0-9][0-9]*\)$/\1/' | awk '{print "tmp/" $1, sprintf("tmp/%07d", $1)}' | xargs -n2 -P2 mv
